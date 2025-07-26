@@ -1,5 +1,4 @@
-from .banco_dados import lista_func
-
+dados = open("armazenamento.txt", "r+")
 
 # função consultar_id
 def consultar_id():
@@ -26,7 +25,7 @@ def consultar_id():
             print("")
 
             # percorre a lista de funcionarios e verifica se o ID inserido pelo usuario existe
-            for funcionario in lista_func():
+            for funcionario in dados():
                 
                 # se o ID existir na lista de funcionarios mudara a variavel encontrado para True
                 # e printara os dados do funcionario

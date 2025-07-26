@@ -1,4 +1,4 @@
-from .banco_dados import lista_func
+import json
 
 
 def consultar_setor():
@@ -9,7 +9,7 @@ def consultar_setor():
         try:
             area = input("Insira o setor: ").strip().upper()
 
-            for funcionario in lista_func():
+            for funcionario in dados():
                 if area == funcionario['setor']:
                     encontrado = True
                     print(f"Setor: {funcionario['setor']} | ID: {funcionario['id']} | Nome: {funcionario['nome']} | Salário: R$ {funcionario['salario']:.2f}")

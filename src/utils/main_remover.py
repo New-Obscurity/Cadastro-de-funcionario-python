@@ -1,5 +1,4 @@
-from .delete_dice.banco_dados import lista_func
-
+dados = open("armazenamento.txt", "r+")
 
 # Função para remover funcionário
 def remover_funcionario():
@@ -8,14 +7,14 @@ def remover_funcionario():
 
 
     # Verefica se há algum dado na lista para ser deletado
-    if not lista_func():
+    if not dados():
         print("Não há dados para deletar")
         return
 
 
     while True:
 
-        lista_funcionario = lista_func  # Obtém a lista de funcionários
+        lista_funcionario = dados  # Obtém a lista de funcionários
         encontrado = False
         
         # evitar entrada de valores invalidos
@@ -36,7 +35,7 @@ def remover_funcionario():
                         continue
 
                     else:
-                        del lista_func.lista_funcionario()[indice]
+                        del dados.lista_funcionario()[indice]
                         print("Funcionário removido com sucesso.")
 
             if encontrado == False:
